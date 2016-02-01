@@ -1,0 +1,11 @@
+- name: Install zsh
+  homebrew: name={{item}}
+  with_items:
+    - zsh
+    - zsh-completions
+
+- name: Install oh-my-zsh
+  shell: curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
+
+- name: Change default shell to zsh
+  shell: chsh -s /bin/zsh
